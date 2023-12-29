@@ -1,0 +1,25 @@
+@prefix : <http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+
+:LaptopShape a sh:NodeShape ;
+	sh:targetNode :airPodsPro2022 , 
+			:asusTUFGamingFX506HF ,
+			:ipadGen9-2021 ,
+			:iphone15ProMax ,
+			:macbookAir13 ,
+			:macbookAir13-2020 ,
+			:orderProduct ,
+			:toshibaIC20S3PV ;
+	sh:nodeKind sh:IRI;
+	sh:property [
+		sh:path :productPrice;
+		sh:minCount 1;
+		sh:maxCount 1;
+		sh:dataType xsd:double
+	] .

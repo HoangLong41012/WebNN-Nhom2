@@ -1,0 +1,581 @@
+@prefix : <http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/> .
+
+<http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/buyProduct
+:buyProduct rdf:type owl:ObjectProperty ;
+            rdfs:domain :Customer ;
+            rdfs:range :Product .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/careAboutProduct
+:careAboutProduct rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Customer ;
+                  rdfs:range :Product .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/hasCPU
+:hasCPU rdf:type owl:ObjectProperty ;
+        rdfs:domain :SmartDevice ;
+        rdfs:range :CPU .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/hasCart
+:hasCart rdf:type owl:ObjectProperty ;
+         rdfs:domain :Customer ;
+         rdfs:range :Cart .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/hasHardDrive
+:hasHardDrive rdf:type owl:ObjectProperty ;
+              rdfs:domain :SmartDevice ;
+              rdfs:range :HardDrive .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/hasOperationSystem
+:hasOperationSystem rdf:type owl:ObjectProperty ;
+                    rdfs:domain :SmartDevice ;
+                    rdfs:range :OperationSystem .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/hasOrder
+:hasOrder rdf:type owl:ObjectProperty ;
+          rdfs:domain :Customer ;
+          rdfs:range :Order .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/hasRAM
+:hasRAM rdf:type owl:ObjectProperty ;
+        rdfs:domain :SmartDevice ;
+        rdfs:range :RAM .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/hasScreen
+:hasScreen rdf:type owl:ObjectProperty ;
+           rdfs:domain :SmartDevice ;
+           rdfs:range :Screen .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/includeCartProduct
+:includeCartProduct rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Cart ;
+                    rdfs:range :CartProduct .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/includeOrderProduct
+:includeOrderProduct rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Order ;
+                     rdfs:range :OrderProduct .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/includeProduct
+:includeProduct rdf:type owl:ObjectProperty ;
+                rdfs:domain :CartProduct ,
+                            :OrderProduct ;
+                rdfs:range :Product .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/madeBy
+:madeBy rdf:type owl:ObjectProperty ;
+        rdfs:domain :Product ;
+        rdfs:range :Brand .
+
+:manufacture rdf:type owl:ObjectProperty ;
+	owl:inverseOf :madeBy .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/branchName
+:branchName rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Brand ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/cameraNumber
+:cameraNumber rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/cartProductQuantity
+:cartProductQuantity rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :CartProduct ;
+                     rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/connectedType
+:connectedType rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Accessory ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/cpuName
+:cpuName rdf:type owl:DatatypeProperty ;
+         rdfs:domain :CPU ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/cpuSpeed
+:cpuSpeed rdf:type owl:DatatypeProperty ;
+          rdfs:domain :CPU ;
+          rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/customerAddress
+:customerAddress rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Customer ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/customerName
+:customerName rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Customer ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/hardDriveCapacity
+:hardDriveCapacity rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :HardDrive ;
+                   rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/hardDriveType
+:hardDriveType rdf:type owl:DatatypeProperty ;
+               rdfs:domain :HardDrive ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/householdPower
+:householdPower rdf:type owl:DatatypeProperty ;
+                rdfs:domain :HouseHold ;
+                rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/orderProductQuantity
+:orderProductQuantity rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :OrderProduct ;
+                      rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/orderingDate
+:orderingDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Order ;
+              rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/osName
+:osName rdf:type owl:DatatypeProperty ;
+        rdfs:domain :OperationSystem ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/phoneNumber
+:phoneNumber rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Customer ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/productName
+:productName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Product ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/productPrice
+:productPrice rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Product ;
+              rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/ramCapacity
+:ramCapacity rdf:type owl:DatatypeProperty ;
+             rdfs:domain :RAM ;
+             rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/ramName
+:ramName rdf:type owl:DatatypeProperty ;
+         rdfs:domain :RAM ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/ramType
+:ramType rdf:type owl:DatatypeProperty ;
+         rdfs:domain :RAM ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/screenSize
+:screenSize rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Screen ;
+            rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/screenType
+:screenType rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Screen ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/simNumber
+:simNumber rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/Accessory
+:Accessory rdf:type owl:Class ;
+           rdfs:subClassOf :Product ;
+           owl:disjointWith :HouseHold ,
+                            :SmartDevice .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/AirConditioner
+:AirConditioner rdf:type owl:Class ;
+                rdfs:subClassOf :HouseHold ;
+                owl:disjointWith :InductionHob .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/Brand
+:Brand rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/CPU
+:CPU rdf:type owl:Class ;
+     rdfs:subClassOf :SmartDeviceComponent .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/Cart
+:Cart rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/CartProduct
+:CartProduct rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/ComputerMouse
+:ComputerMouse rdf:type owl:Class ;
+               rdfs:subClassOf :Accessory ;
+               owl:disjointWith :HeadPhone ,
+                                :KeyBoard .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/Customer
+:Customer rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/HardDrive
+:HardDrive rdf:type owl:Class ;
+           rdfs:subClassOf :SmartDeviceComponent .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/HeadPhone
+:HeadPhone rdf:type owl:Class ;
+           rdfs:subClassOf :Accessory ;
+           owl:disjointWith :KeyBoard .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/HouseHold
+:HouseHold rdf:type owl:Class ;
+           rdfs:subClassOf :Product ;
+           owl:disjointWith :SmartDevice .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/InductionHob
+:InductionHob rdf:type owl:Class ;
+              rdfs:subClassOf :HouseHold .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/KeyBoard
+:KeyBoard rdf:type owl:Class ;
+          rdfs:subClassOf :Accessory .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/Laptop
+:Laptop rdf:type owl:Class ;
+        rdfs:subClassOf :SmartDevice ;
+        owl:disjointWith :SmartPhone ,
+                         :Tablet .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/OperationSystem
+:OperationSystem rdf:type owl:Class ;
+                 rdfs:subClassOf :SmartDeviceComponent .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/Order
+:Order rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/OrderProduct
+:OrderProduct rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/Product
+:Product rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/RAM
+:RAM rdf:type owl:Class ;
+     rdfs:subClassOf :SmartDeviceComponent .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/Screen
+:Screen rdf:type owl:Class ;
+        rdfs:subClassOf :SmartDeviceComponent .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/SmartDevice
+:SmartDevice rdf:type owl:Class ;
+             rdfs:subClassOf :Product .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/SmartDeviceComponent
+:SmartDeviceComponent rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/SmartPhone
+:SmartPhone rdf:type owl:Class ;
+            rdfs:subClassOf :SmartDevice ;
+            owl:disjointWith :Tablet .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/Tablet
+:Tablet rdf:type owl:Class ;
+        rdfs:subClassOf :SmartDevice .
+
+:MacBook owl:equivalentClass 
+		[ owl:intersectionOf(:Laptop [
+			a owl:Restriction;
+			owl:onProperty :madeBy;
+			owl:hasValue :apple]) ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device#JohnOrderA1-2
+:JohnOrderA1-2 rdf:type :OrderProduct ;
+               :includeProduct :iphone15ProMax ;
+               :orderProductQuantity "1"^^xsd:int .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device#JohnOrderA2-1
+:JohnOrderA2-1 rdf:type :OrderProduct ;
+               :includeProduct :asusTUFGamingFX506HF ;
+               :orderProductQuantity "1"^^xsd:int .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device#johnOrderA2
+:johnOrderA2 rdf:type :Order ;
+             :includeOrderProduct :JohnOrderA2-1 ;
+             :orderingDate "2023-12-25T09:00:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/JohnOrderA1-1
+:JohnOrderA1-1 rdf:type :OrderProduct ;
+               :includeProduct :macbookAir13 ;
+               :orderProductQuantity "1"^^xsd:int .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/a17Pro
+:a17Pro rdf:type :CPU ;
+        :cpuName "A17 Pro" ;
+        :cpuSpeed "3.64"^^xsd:double .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/airPodsPro2022
+:airPodsPro2022 rdf:type :HeadPhone ;
+                :madeBy :apple ;
+                :connectedType "Bluetooth" ;
+                :productName "AirPods Pro 2022 Headphone" ;
+                :productPrice "5290000.0"^^xsd:double .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/antiGlare
+:antiGlare rdf:type :Screen ;
+           :screenSize "15.6"^^xsd:double ;
+           :screenType "Anti Glare 144Hz" .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/apple
+:apple rdf:type :Brand ;
+       :branchName "Apple" .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/appleM1
+:appleM1 rdf:type :CPU ;
+         :cpuName "Apple M1" ;
+         :cpuSpeed "3.2"^^xsd:double .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/asus
+:asus rdf:type :Brand ;
+      :branchName "Asus" .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/asusTUFGamingFX506HF
+:asusTUFGamingFX506HF rdf:type :Laptop ;
+                      :hasCPU :intel_Corei5_11400H ;
+                      :hasHardDrive :ssdM2Pcle ;
+                      :hasOperationSystem :window11 ;
+                      :hasRAM :ddr4 ;
+                      :hasScreen :antiGlare ;
+                      :madeBy :asus ;
+                      :productPrice "1.749E7"^^xsd:double .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/cartProduct
+:cartProduct rdf:type :Product .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/ddr4
+:ddr4 rdf:type :RAM ;
+      :ramCapacity "16"^^xsd:int ;
+      :ramName "DDR4 3200MHz" ;
+      :ramType "DDR4" .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/intel_Corei5_11400H
+:intel_Corei5_11400H rdf:type :CPU ;
+                     :cpuName "Intel Core i5 11400H" ;
+                     :cpuSpeed "2.7"^^xsd:double .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/ios
+:ios rdf:type :OperationSystem .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/ipadGen9-2021
+:ipadGen9-2021 rdf:type :Tablet ;
+		:hasRAM :ddr4 ;
+                :madeBy :apple ;
+		:hasHardDrive :ssdM2Pcle ;
+		:hasCPU :appleM1;
+		:productPrice "1.549E7"^^xsd:double .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/iphone15ProMax
+:iphone15ProMax rdf:type :SmartPhone ;
+                :madeBy :apple ;
+                :productPrice "3.349E7"^^xsd:double .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/john
+:john rdf:type :Customer ;
+      :hasCart :johnCart ;
+      :hasOrder :johnOrderA2 ,
+                :johnOrderA1 .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/johnCart
+:johnCart rdf:type :Cart ;
+          :includeCartProduct :johnCartProduct1 .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/johnCartProduct1
+:johnCartProduct1 rdf:type :CartProduct ;
+                  :includeProduct :cartProduct .
+
+
+###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/johnOrderA1
+:johnOrderA1 rdf:type :Order ;
+             :includeOrderProduct :JohnOrderA1-2 ,
+                                  :JohnOrderA1-1 ;
+             :orderingDate "2023-12-22T09:00:00"^^xsd:dateTime .
+
+
+:lcdBacklit rdf:type :Screen ;
+            :screenSize "13.3"^^xsd:double ;
+            :screenType "LED" .
+
+
+:lpddr4 rdf:type :RAM ;
+        :ramName "Lpddr4-8g" ;
+	:ramCapacity "8"^^xsd:int ;
+        :ramType "LPDDR4" .
+
+
+:lpddr5 rdf:type :RAM ;
+	:ramCapacity "8"^^xsd:int .
+
+
+:macOS rdf:type :OperationSystem .
+
+
+:macbookAir13 rdf:type :Laptop ;
+              :hasCPU :appleM1 ;
+              :hasHardDrive :ssd256gb ;
+              :hasOperationSystem :macOS ;
+              :hasRAM :lpddr4 ;
+              :hasScreen :lcdBacklit ;
+              :madeBy :apple ;
+              :productPrice "2.099E7"^^xsd:double .
+
+
+:macbookAir13-2020 rdf:type :Laptop ;
+		:hasCPU :appleM1 ;
+		:hasRAM :lpddr5.
+
+
+:orderProduct rdf:type :Product .
+
+
+:ssd256gb rdf:type :HardDrive ;
+	:hardDriveCapacity "256"^^xsd:int ;
+	:hardDriveType "SSD" .
+
+
+:ssdM2Pcle rdf:type :HardDrive ;
+	:hardDriveCapacity "512"^^xsd:int ;
+	:hardDriveType "SSD M2 Pcle" .
+
+
+:toshiba rdf:type :Brand ;
+	:branchName "Toshiba" .
+
+
+:toshibaIC20S3PV rdf:type :InductionHob ;
+		:madeBy :toshiba ;
+		:householdPower "2000.0"^^xsd:double ;
+                :productName "Toshiba IC-20S3PV single induction cooker" ;
+                :productPrice "1590000.0"^^xsd:double .
+
+
+:toshibaInverter1HP rdf:type :AirConditioner ;
+		:madeBy :toshiba ;
+                :householdPower "3500.0"^^xsd:double ;
+                :productName "Toshiba Inverter 1 HP RAS-H10Z1KCVG-V" ;
+                :productPrice "1.059E7"^^xsd:double .
+
+
+:window11 rdf:type :OperationSystem ;
+	:osName "Window 11 Home" .
+
+
+:zadezGT015DK rdf:type :KeyBoard ;
+		:connectedType "USB-A" ;
+                :productName "Zadez GT-015DK Wireless Keyboard" ;
+                :productPrice "1490000.0"^^xsd:double .
+
+
+:zadezM390 rdf:type :ComputerMouse ;
+		:connectedType "USB-A" ;
+                :productName "ZADEZ M390 wireless mouse" ;
+                :productPrice "200000.0"^^xsd:double .
+
