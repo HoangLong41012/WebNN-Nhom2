@@ -1,0 +1,1 @@
+export const defaultPrefix = "<http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/>"

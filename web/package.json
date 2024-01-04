@@ -1,0 +1,23 @@
+{
+  "name": "electronic_device_sem_web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/noto-sans": "^5.0.18",
+    "@fontsource/roboto": "^5.0.8",
+    "@mui/material": "^5.15.2",
+    "axios": "^1.6.3",
+    "lodash": "^4.17.21",
+    "next": "14.0.4",
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}

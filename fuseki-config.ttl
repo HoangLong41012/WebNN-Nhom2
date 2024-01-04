@@ -43,7 +43,7 @@ PREFIX tdb2:    <http://jena.apache.org/2016/tdb#>
      ja:baseModel :tdbGraph ;
      ja:reasoner [
 #ja:reasonerURL <http://jena.hpl.hp.com/2003/OWLFBRuleReasoner>;
-         ja:rulesFrom <D://20231_project//SematicWeb//electronic-device-rules.ttl>
+         ja:rulesFrom <D://20231_project//SematicWeb//WebNN-Nhom2//electronic-device-rules.ttl>
      ] .
 
 :tdbGraph rdf:type tdb2:GraphTDB2 ;
@@ -51,7 +51,7 @@ PREFIX tdb2:    <http://jena.apache.org/2016/tdb#>
 
 ## Base data in TDB.
 :tdbDataset rdf:type tdb2:DatasetTDB2 ;
-    tdb2:location "/home/demo/db-4" ;
+    tdb2:location "/home/demo/db5" ;
     # If the unionDefaultGraph is used, then the "update" service should be removed.
     # tdb:unionDefaultGraph true ;
     .

@@ -186,6 +186,10 @@
              rdfs:domain :Customer ;
              rdfs:range xsd:string .
 
+:productId rdf:type owl:DataProperty ;
+	rdfs:domain :Product ;
+	rdfs:range xsd:string .
+
 
 ###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/productName
 :productName rdf:type owl:DatatypeProperty ;
@@ -364,6 +368,16 @@
 			owl:onProperty :madeBy;
 			owl:hasValue :apple]) ] .
 
+:HouseHoldBrand owl:equivalentClass
+		[ a owl:Restriction;
+		  owl:onProperty :manufacture;
+		  owl:someValuesFrom :HouseHold ] .
+
+:SmartDeviceBrand owl:equivalentClass
+		[ a owl:Restriction;
+		  owl:onProperty :manufacture;
+		  owl:someValuesFrom :SmartDevice ] .
+
 
 #################################################################
 #    Individuals
@@ -404,6 +418,7 @@
                 :madeBy :apple ;
                 :connectedType "Bluetooth" ;
                 :productName "AirPods Pro 2022 Headphone" ;
+		:productId "pd01" ;
                 :productPrice "5290000.0"^^xsd:double .
 
 
@@ -437,6 +452,7 @@
                       :hasRAM :ddr4 ;
                       :hasScreen :antiGlare ;
                       :madeBy :asus ;
+		      :productId "pd02" ;
                       :productPrice "1.749E7"^^xsd:double .
 
 
@@ -467,12 +483,14 @@
                 :madeBy :apple ;
 		:hasHardDrive :ssdM2Pcle ;
 		:hasCPU :appleM1;
+		:productId "pd03" ;
 		:productPrice "1.549E7"^^xsd:double .
 
 
 ###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/iphone15ProMax
 :iphone15ProMax rdf:type :SmartPhone ;
                 :madeBy :apple ;
+		:productId "pd04" ;
                 :productPrice "3.349E7"^^xsd:double .
 
 
@@ -525,11 +543,13 @@
               :hasRAM :lpddr4 ;
               :hasScreen :lcdBacklit ;
               :madeBy :apple ;
+	      :productId "pd05" ;
               :productPrice "2.099E7"^^xsd:double .
 
 
 :macbookAir13-2020 rdf:type :Laptop ;
 		:hasCPU :appleM1 ;
+		:productId "pd06" ;
 		:hasRAM :lpddr5.
 
 
@@ -554,6 +574,7 @@
 		:madeBy :toshiba ;
 		:householdPower "2000.0"^^xsd:double ;
                 :productName "Toshiba IC-20S3PV single induction cooker" ;
+		:productId "pd07" ;
                 :productPrice "1590000.0"^^xsd:double .
 
 
@@ -561,6 +582,7 @@
 		:madeBy :toshiba ;
                 :householdPower "3500.0"^^xsd:double ;
                 :productName "Toshiba Inverter 1 HP RAS-H10Z1KCVG-V" ;
+		:productId "pd08" ;
                 :productPrice "1.059E7"^^xsd:double .
 
 
@@ -571,11 +593,16 @@
 :zadezGT015DK rdf:type :KeyBoard ;
 		:connectedType "USB-A" ;
                 :productName "Zadez GT-015DK Wireless Keyboard" ;
+		:productId "pd09" ;
                 :productPrice "1490000.0"^^xsd:double .
 
 
 :zadezM390 rdf:type :ComputerMouse ;
 		:connectedType "USB-A" ;
                 :productName "ZADEZ M390 wireless mouse" ;
+		:productId "pd10" ;
                 :productPrice "200000.0"^^xsd:double .
+
+:macbook2023 rdf:type :MacBook ;
+	:productId "pd11" ;.
 
