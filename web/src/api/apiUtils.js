@@ -5,7 +5,7 @@ export const baseApi = "http://localhost:3030";
 
 export const getApiResponse = async ({
   url,
-  queryParams,
+  query,
 }) => {
   const option = {
     headers: {
@@ -13,18 +13,11 @@ export const getApiResponse = async ({
     },
   };
 
-  let query;
-  if (queryParams) {
-    const queryStr = Object.keys(queryParams)
-      .map(
-        (k) => `${encodeURIComponent(k)}=${encodeURIComponent(queryParams[k])}`
-      )
-      .join('&');
-    query = `?${queryStr}`;
+  let baseUrlWithVersion = `${baseApi}${url}`;
+  if (query) {
+    baseUrlWithVersion = `${baseUrlWithVersion}?query=${query}`;
   }
-  let baseUrlWithVersion = baseApi;
-  const urlWithBase = [`${baseUrlWithVersion}${url}`, query].join('');
-  const fetchResult = await axios.get(urlWithBase, option);
+  const fetchResult = await axios.get(baseUrlWithVersion, option);
   const result = await fetchResult.data;
   return result;
 };
@@ -36,8 +29,8 @@ export const PostApiResponse = async ({
 }) => {
   const option = {
     headers: {
-      'Accept': '*/*',
-      'Content-Type': 'application/sparql-results+json',
+      'Accept': '*',
+      'Content-Type': 'application/sparql-results+json; charset=utf-8',
       'Content-Encoding': 'gzip, deflate, br',
       'Transfer-Encoding': 'chunked',
       'Access-Control-Allow-Origin': '*',

@@ -8,18 +8,39 @@
 
 
 :LaptopShape a sh:NodeShape ;
-	sh:targetNode :airPodsPro2022 , 
-			:asusTUFGamingFX506HF ,
+	sh:targetNode :asusTUFGamingFX506HF ,
 			:ipadGen9-2021 ,
 			:iphone15ProMax ,
 			:macbookAir13 ,
 			:macbookAir13-2020 ,
-			:orderProduct ,
-			:toshibaIC20S3PV ;
+			:orderProduct ;
 	sh:nodeKind sh:IRI;
 	sh:property [
 		sh:path :productPrice;
 		sh:minCount 1;
 		sh:maxCount 1;
 		sh:dataType xsd:double
+	] ;
+	sh:property [
+		sh:path :hasRAM;
+		sh:minCount 1;
+		sh:dataType sh:IRI
+	] ;
+	sh:property [
+		sh:path :hasOperationSystem;
+		sh:minCount 1;
+		sh:maxCount 1;
+		sh:dataType sh:IRI
+	] ;
+        sh:property [
+		sh:path :hasScreen;
+		sh:minCount 1;
+		sh:maxCount 1;
+		sh:dataType sh:IRI
+	] ;
+	sh:property [
+		sh:path :hasCPU;
+		sh:minCount 1;
+		sh:maxCount 1;
+		sh:dataType sh:IRI
 	] .

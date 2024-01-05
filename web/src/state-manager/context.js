@@ -10,8 +10,8 @@ const reducer = (state, action) => {
     return { ...state, ...payload };
   }
   switch (action.type) {
-    case StateConstant.GET_SMART_DEVICE_BRANDS:
-      return _setState({ smartDeviceBrand: action.payload.brand });
+    case StateConstant.SET_SMART_DEVICE:
+      return _setState({ smartDeviceProducts: action.payload.brand });
     default:
       return {
         ...state,

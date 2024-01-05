@@ -1,5 +1,5 @@
 @prefix : <http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/>.
 @include <OWL>.
 [rdfs1: (?a rdfs:subClassOf ?p) (?p owl:disjointWith ?q) -> (?a owl:disjointWith ?q)]
-[rule1: (?a :hasOrder ?b) (?b :includeOrderProduct ?c) (?c :includeProduct ?d) -> (?a :buyProduct ?d)]
-[rule2: (?a :hasCart ?b) (?b :includeCartProduct ?c) (?c :includeProduct ?d) -> (?a :careAboutProduct ?d)]
+[rule2: (?a :hasOrder ?b) (?b :includeOrderProduct ?c) (?c :includeProduct ?d) -> (?a :buyProduct ?d)]
+[rule3: (?a :hasCart ?b) (?b :includeCartProduct ?c) (?c :includeProduct ?d) -> (?a :careAboutProduct ?d)]

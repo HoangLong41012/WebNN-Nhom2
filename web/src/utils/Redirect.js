@@ -13,3 +13,11 @@ export const handleDirectToSmartDevice = (router) => {
     destination: '/smartDevice',
   });
 };
+
+export const handleDirectToCpu = (router, query) => {
+  _handleDirect({
+    router,
+    destination: '/cpu',
+    query,
+  });
+};

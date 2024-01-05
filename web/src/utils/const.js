@@ -1,1 +1,5 @@
 export const defaultPrefix = "<http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/>"
+export const owlPrefix = "<http://www.w3.org/2002/07/owl#>"
+export const xsdPrefix = "<http://www.w3.org/2001/XMLSchema#>"
+export const rdfPrefix = "<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
+export const rdfsPrefix = "<http://www.w3.org/2000/01/rdf-schema#>"

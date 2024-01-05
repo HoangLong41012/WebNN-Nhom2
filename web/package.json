@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.11.0",
     "@fontsource/noto-sans": "^5.0.18",
     "@fontsource/roboto": "^5.0.8",
+    "@mui/icons-material": "^5.15.3",
     "@mui/material": "^5.15.2",
     "axios": "^1.6.3",
     "lodash": "^4.17.21",

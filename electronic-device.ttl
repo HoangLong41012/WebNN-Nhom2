@@ -438,6 +438,10 @@
          :cpuName "Apple M1" ;
          :cpuSpeed "3.2"^^xsd:double .
 
+:appleA13 rdf:type :CPU ;
+         :cpuName "Apple A13 Bionic" ;
+         :cpuSpeed "2.5"^^xsd:double .
+
 
 ###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/asus
 :asus rdf:type :Brand ;
@@ -453,7 +457,23 @@
                       :hasScreen :antiGlare ;
                       :madeBy :asus ;
 		      :productId "pd02" ;
+		      :productName "Asus TUF Gaming FX506HF" ;
                       :productPrice "1.749E7"^^xsd:double .
+
+:asusVivoBook rdf:type :Laptop ;
+                      :hasCPU :amdRyzen5 ;
+                      :hasHardDrive :ssd512gb ;
+                      :hasOperationSystem :window11 ;
+                      :hasRAM :lpddr5 ;
+                      :hasScreen :lcdBacklit ;
+                      :madeBy :asus ;
+		      :productId "pd02" ;
+		      :productName "Asus VivoBook E1404FA-NK186W" ;
+                      :productPrice "1.349E7"^^xsd:double .
+
+:amdRyzen5 rdf:type :CPU ;
+                :cpuName "AMD Ryzen5 7520U" ;
+                :cpuSpeed "2.8"^^xsd:double .
 
 
 ###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/cartProduct
@@ -474,23 +494,33 @@
 
 
 ###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/ios
-:ios rdf:type :OperationSystem .
+:ios rdf:type :OperationSystem ;
+	:osName "IOS".
 
 
 ###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/ipadGen9-2021
 :ipadGen9-2021 rdf:type :Tablet ;
-		:hasRAM :ddr4 ;
+		:hasRAM :lpddr4x ;
                 :madeBy :apple ;
-		:hasHardDrive :ssdM2Pcle ;
-		:hasCPU :appleM1;
+		:hasHardDrive :ssd256gb ;
+		:hasCPU :appleA13;
 		:productId "pd03" ;
+		:hasScreen :lcd ;
+		:productName "Ipad gen9 2021" ;
+		:hasOperationSystem :ios ;
 		:productPrice "1.549E7"^^xsd:double .
 
 
 ###  http://www.semanticweb.org/admin/ontologies/2023/10/electronic-device/iphone15ProMax
 :iphone15ProMax rdf:type :SmartPhone ;
+		:hasRAM :lpddr4x ;
                 :madeBy :apple ;
+		:hasCPU :appleA13;
 		:productId "pd04" ;
+		:hasHardDrive :ssd256gb ;
+		:hasScreen :oled ;
+		:hasOperationSystem :ios ;
+		:productName "Iphone 15 Promax 2023" ;
                 :productPrice "3.349E7"^^xsd:double .
 
 
@@ -522,18 +552,35 @@
             :screenSize "13.3"^^xsd:double ;
             :screenType "LED" .
 
+:lcd rdf:type :Screen ;
+            :screenSize "10.2"^^xsd:double ;
+            :screenType "IPS LCD" .
+
+:oled rdf:type :Screen ;
+            :screenSize "6,7"^^xsd:double ;
+            :screenType "OLED" .
+
+
 
 :lpddr4 rdf:type :RAM ;
         :ramName "Lpddr4-8g" ;
 	:ramCapacity "8"^^xsd:int ;
         :ramType "LPDDR4" .
 
+:lpddr4x rdf:type :RAM ;
+        :ramName "Lpddr4x-4g" ;
+	:ramCapacity "4"^^xsd:int ;
+        :ramType "LPDDR4X" .
+
 
 :lpddr5 rdf:type :RAM ;
+	:ramName "Lpddr5-8g" ;
+	:ramType "LPDDR5" ;
 	:ramCapacity "8"^^xsd:int .
 
 
-:macOS rdf:type :OperationSystem .
+:macOS rdf:type :OperationSystem ;
+	:osName "Mac OS".
 
 
 :macbookAir13 rdf:type :Laptop ;
@@ -544,12 +591,14 @@
               :hasScreen :lcdBacklit ;
               :madeBy :apple ;
 	      :productId "pd05" ;
+	      :productName "Macbook Air 13" ;
               :productPrice "2.099E7"^^xsd:double .
 
 
 :macbookAir13-2020 rdf:type :Laptop ;
 		:hasCPU :appleM1 ;
 		:productId "pd06" ;
+		:productName "Macbook Air 13 2020" ;
 		:hasRAM :lpddr5.
 
 
@@ -558,6 +607,10 @@
 
 :ssd256gb rdf:type :HardDrive ;
 	:hardDriveCapacity "256"^^xsd:int ;
+	:hardDriveType "SSD" .
+
+:ssd512gb rdf:type :HardDrive ;
+	:hardDriveCapacity "512"^^xsd:int ;
 	:hardDriveType "SSD" .
 
 
